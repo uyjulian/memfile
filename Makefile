@@ -33,7 +33,7 @@ LDLIBS += -lole32
 	@printf '\t%s %s\n' WINDRES $<
 	$(WINDRES) $(WINDRESFLAGS) $< $@
 
-SOURCES := ../tp_stub.cpp ../ncbind/ncbind.cpp Main.cpp
+SOURCES := ../tp_stub.cpp ../ncbind/ncbind.cpp Main.cpp memfile.rc
 OBJECTS := $(SOURCES:.c=.o)
 OBJECTS := $(OBJECTS:.cpp=.o)
 OBJECTS := $(OBJECTS:.rc=.o)
