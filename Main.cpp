@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <windows.h>
-#include "ncbind/ncbind.hpp"
+#include "ncbind.hpp"
 #include <map>
 
 #define BASENAME L"mem"
