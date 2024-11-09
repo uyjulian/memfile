@@ -214,7 +214,7 @@ public:
 	 * @param flags オープンフラグ
 	 * @return 開いたストリーム
 	 */
-	tTJSBinaryStream *open(const ttstr &name, tjs_uint32 flags) {
+	iTJSBinaryStream *open(const ttstr &name, tjs_uint32 flags) {
 		if (pDirectory && name != "" && name.GetLastChar() != '/') {
 			const tjs_char *p = name.c_str();
 			const tjs_char *q;
@@ -327,7 +327,7 @@ protected:
 	 * @param flags 
 	 * @return ストリーム
 	 */
-	tTJSBinaryStream *_open(const ttstr &name, tjs_uint32 flags) {
+	iTJSBinaryStream *_open(const ttstr &name, tjs_uint32 flags) {
 		if (pDirectory) {
 			IStream *stream = NULL;
 			Directory::const_iterator it = pDirectory->find(name);
@@ -348,7 +348,7 @@ protected:
 					n.QuadPart = 0;
 					stream->Seek(n, STREAM_SEEK_END, NULL);
 				}
-				tTJSBinaryStream *bstream =TVPCreateBinaryStreamAdapter(stream);
+				iTJSBinaryStream *bstream =TVPCreateBinaryStreamAdapter(stream);
 				stream->Release();
 				return bstream;
 			}
@@ -455,13 +455,13 @@ public:
 		return root.findFile(fname) != NULL;
 	}
 
-	// open a storage and return a tTJSBinaryStream instance.
+	// open a storage and return a iTJSBinaryStream instance.
 	// name does not contain in-archive storage name but
 	// is normalized.
-	virtual tTJSBinaryStream * TJS_INTF_METHOD Open(const ttstr & name, tjs_uint32 flags) {
+	virtual iTJSBinaryStream * TJS_INTF_METHOD Open(const ttstr & name, tjs_uint32 flags) {
 		ttstr dname, fname;
 		getFilename(name, dname, fname);
-		tTJSBinaryStream *ret = root.open(fname, flags);
+		iTJSBinaryStream *ret = root.open(fname, flags);
 		if (!ret) {
 			TVPThrowExceptionMessage(TJS_W("cannot open memfile:%1"), name);
 		}
