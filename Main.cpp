@@ -6,6 +6,10 @@
 
 #define BASENAME L"mem"
 
+#if 1
+#define iTJSBinaryStream tTJSBinaryStream
+#endif
+
 /**
  * ファイル情報保持用クラス
  */
