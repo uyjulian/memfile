@@ -257,7 +257,7 @@ public:
 				return _mkdir(name);
 			}
 		}
-		return false;
+		return NULL;
 	}
 
 	/**
