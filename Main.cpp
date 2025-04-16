@@ -87,10 +87,10 @@ public:
 		if (dict != NULL) {
 			tTJSVariant name(this->name);
 			tTJSVariant size((tjs_int64)getSize());
-			tTJSVariant isDirectory(isDirectory() ? 1 : 0);
+			tTJSVariant isDirectory_var(isDirectory() ? 1 : 0);
 			dict->PropSet(TJS_MEMBERENSURE, L"name",  NULL, &name, dict);
 			dict->PropSet(TJS_MEMBERENSURE, L"size",  NULL, &size, dict);
-			dict->PropSet(TJS_MEMBERENSURE, L"isDirectory",  NULL, &isDirectory, dict);
+			dict->PropSet(TJS_MEMBERENSURE, L"isDirectory",  NULL, &isDirectory_var, dict);
 			tTJSVariant ret(dict, dict);
 			dict->Release();
 			return ret;
