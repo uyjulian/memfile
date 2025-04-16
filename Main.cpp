@@ -646,7 +646,7 @@ public:
 	 * @return ファイル情報 %[name:名前, size:サイズ, isDirectory:ディレクトリならtrue]
 	 */
 	static tTJSVariant getMemoryFileInfo(ttstr filename) {
-		return mem ? mem->getInfo(filename) : NULL;
+		return mem ? mem->getInfo(filename) : (tTJSVariant)NULL;
 	}
 	
 	/**
@@ -655,7 +655,7 @@ public:
 	 * @return ファイルが存在したら内容を octet で返す。なければ void
 	 */
 	static tTJSVariant getMemoryFileData(ttstr filename) {
-		return mem ? mem->getData(filename) : NULL;
+		return mem ? mem->getData(filename) : (tTJSVariant)NULL;
 	}
 
 	/**
@@ -664,7 +664,7 @@ public:
 	 * @return ファイル情報の配列 %[name:名前, size:サイズ, isDirectory:ディレクトリならtrue]
 	 */
 	static tTJSVariant getMemoryDirectory(ttstr dirname) {
-		return mem ? mem->getDirectory(dirname) : NULL;
+		return mem ? mem->getDirectory(dirname) : (tTJSVariant)NULL;
 	}
 
 protected:
